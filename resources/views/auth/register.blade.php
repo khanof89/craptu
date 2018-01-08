@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="padding-top:80px">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -65,6 +65,10 @@
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
+
+                                <a href="/login" class="btn btn-link">
+                                    Login
+                                </a>
                             </div>
                         </div>
                     </form>

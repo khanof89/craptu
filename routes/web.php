@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+    Route::get('/', function () {
+        return redirect()->to('/bitfinex/btc/usd');
+    });
 
-Auth::routes();
+    Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('groups', 'GroupController');
-Route::resource('conversations', 'ConversationController');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('groups', 'GroupController');
+    Route::resource('conversations', 'ConversationController');
+
+
+    Route::get('graph/{exchange}/{coin}/{base}', 'CurrencyController@graph');
+
+    Route::get('/{marketplace}/{coin}/{base}', 'CurrencyController@getCoinPrice');
