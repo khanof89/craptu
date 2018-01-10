@@ -155,7 +155,7 @@
                             <i class="zmdi zmdi-more-vert"></i>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="">One day</a></li>
+                            <li><a href="/{{$exchange}}/{{$coin}}/{{$base}}">One day</a></li>
                             <li><a href="/{{$exchange}}/{{$coin}}/{{$base}}/week">Week</a></li>
                             <li><a href="/{{$exchange}}/{{$coin}}/{{$base}}/month">Month</a></li>
                             <li><a href="/{{$exchange}}/{{$coin}}/{{$base}}/year">Year</a></li>
