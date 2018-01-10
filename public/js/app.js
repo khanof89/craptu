@@ -2715,19 +2715,19 @@ if (typeof jQuery === 'undefined') {
   // DROPDOWN CLASS DEFINITION
   // =========================
 
-  var backdrop = '.dropdown-backdrop'
+  /*var backdrop = '.dropdown-backdrop'
   var toggle   = '[data-toggle="dropdown"]'
   var Dropdown = function (element) {
     $(element).on('click.bs.dropdown', this.toggle)
   }
 
-  Dropdown.VERSION = '3.3.7'
+  Dropdown.VERSION = '3.3.7';*/
 
   function getParent($this) {
-    var selector = $this.attr('data-target')
+    var selector = $this.attr('data-target');
 
     if (!selector) {
-      selector = $this.attr('href')
+      selector = $this.attr('href');
       selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 

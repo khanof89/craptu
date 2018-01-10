@@ -5,6 +5,7 @@
     use App\Models\Ticker;
     use App\Repositories\BitfinexRepository;
     use App\User;
+    use Carbon\Carbon;
     use GuzzleHttp\Client;
     use Illuminate\Http\Request;
 
@@ -47,7 +48,7 @@
                 return json_encode($data);
             }
 
-            if(\Auth::check()) {
+            if (\Auth::check()) {
                 $groups = auth()->user()->groups;
 
                 $users = User::where('id', '<>', auth()->user()->id)->get();
@@ -79,9 +80,28 @@
             return false;
         }
 
-        public function graph($exchange, $coin, $base)
+        public function graph($exchange, $coin, $base, $period = '')
         {
-            $stats   = Ticker::where(['exchange' => $exchange, 'coin' => $coin, 'base' => $base])->get();
+            switch ($period) {
+                case 'week':
+                    $startDate = Carbon::now()->subWeek(1);
+                    $endDate   = Carbon::now();
+                    break;
+                case 'month':
+                    $startDate = Carbon::now()->subMonth(1);
+                    $endDate   = Carbon::now();
+                    break;
+                case 'year':
+                    $startDate = Carbon::now()->subYear(1);
+                    $endDate   = Carbon::now();
+                    break;
+                default:
+                    $startDate = Carbon::now()->subHours(24);
+                    $endDate   = Carbon::now();
+                    break;
+            }
+
+            $stats   = Ticker::where(['exchange' => $exchange, 'coin' => $coin, 'base' => $base])->whereBetween('created_at', [$startDate, $endDate])->get();
             $results = [];
             foreach ($stats as $stat) {
                 $results[] = ['y' => date('Y-m-d H:i:s', strtotime($stat->created_at)), 'a' => $stat->price];

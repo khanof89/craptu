@@ -22,6 +22,6 @@
     Route::resource('conversations', 'ConversationController');
 
 
-    Route::get('graph/{exchange}/{coin}/{base}', 'CurrencyController@graph');
+    Route::get('graph/{exchange}/{coin}/{base}/{period?}', 'CurrencyController@graph');
 
-    Route::get('/{marketplace}/{coin}/{base}', 'CurrencyController@getCoinPrice');
+    Route::get('/{marketplace}/{coin}/{base}/{period?}', 'CurrencyController@getCoinPrice');
