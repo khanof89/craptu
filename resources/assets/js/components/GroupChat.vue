@@ -27,6 +27,7 @@
                         </li>
                     </ul>
                 </div>
+
                 <div class="panel-footer">
                     <div class="input-group">
                         <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." v-model="message" @keyup.enter="store()" autofocus />

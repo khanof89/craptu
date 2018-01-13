@@ -385,8 +385,8 @@
 <script src="/assets/js/jquery.core.js"></script>
 <script src="/assets/js/jquery.app.js"></script>
 
+<script>var userIsLoggedIn = {{ Auth::check() }};</script>
 <script>
-
     var parsed = '';
     var results = [];
     var url = $(location).attr('href');

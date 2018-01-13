@@ -2,6 +2,8 @@
 
     namespace App\Http\Controllers;
 
+    use App\Models\Conversation;
+    use App\Group;
     use App\Models\Ticker;
     use App\Repositories\BitfinexRepository;
     use App\User;
@@ -48,14 +50,15 @@
                 return json_encode($data);
             }
 
-            if (\Auth::check()) {
-                $groups = auth()->user()->groups;
+            $groups        = Group::where('symbol', $coin)->get();
+            $conversations = Conversation::where('group_id', $groups[0]->id)->limit(50)->get();
 
+            if (\Auth::check()) {
                 $users = User::where('id', '<>', auth()->user()->id)->get();
                 $user  = auth()->user();
             }
 
-            return view('welcome', compact('data', 'exchange', 'coin', 'base', 'groups', 'users', 'user'));
+            return view('welcome', compact('data', 'exchange', 'coin', 'base', 'groups', 'users', 'user', 'conversations'));
 
         }
 
