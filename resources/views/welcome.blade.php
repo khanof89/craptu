@@ -129,13 +129,13 @@
                         </ul>
                     </li>
 
-                    {{--<li class="has-submenu">
+                    <li class="has-submenu">
                         <a href="#"><i class="zmdi zmdi-collection-item"></i><span> Select Exchange </span> </a>
                         <ul class="submenu">
                             <li><a href="/bitfinex/{{$coin}}/{{$base}}">Bitfinex</a></li>
                             <li><a href="/bittrex/{{$coin}}/{{$base}}">Bittrex</a></li>
                         </ul>
-                    </li>--}}
+                    </li>
 
                 </ul>
                 <!-- End navigation menu  -->
