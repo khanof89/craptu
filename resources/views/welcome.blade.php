@@ -52,29 +52,12 @@
 
             <!-- LOGO -->
             <div class="topbar-left">
-                <a href="/" class="logo"><span>Crap<span>tu</span></span></a>
+                <a href="index.html" class="logo"><span>Admin<span>to</span></span></a>
             </div>
             <!-- End Logo container-->
 
 
             <div class="menu-extras">
-
-                {{--<ul class="nav navbar-nav navbar-right pull-right">
-                    <li class="dropdown user-box">
-                        <a href="" class="dropdown-toggle waves-effect waves-light profile " data-toggle="dropdown"
-                           aria-expanded="true">
-                            <img src="/assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle user-img">
-                            <div class="user-status away"><i class="zmdi zmdi-dot-circle"></i></div>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-power-off m-r-5"></i> Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>--}}
                 <div class="menu-item">
                     <!-- Mobile menu toggle-->
                     <a class="navbar-toggle">
@@ -88,6 +71,75 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <div class="navbar-custom">
+        <div class="container">
+            <div id="navigation">
+                <!-- Navigation Menu-->
+                <ul class="navigation-menu">
+                    <li class="has-submenu">
+                        <a href="#"><i class="zmdi zmdi-layers"></i> <span> Select Pair </span> </a>
+                        <ul class="submenu megamenu">
+                            <li>
+                                <ul>
+                                    <li><a href="/{{$exchange}}/btc/usd">BTC/USD</a></li>
+                                    <li><a href="/{{$exchange}}/eth/usd">ETH/USD</a></li>
+                                    <li><a href="/{{$exchange}}/eth/btc">ETH/BTC</a></li>
+                                    <li><a href="/{{$exchange}}/ltc/usd">LTC/USD</a></li>
+                                    <li><a href="/{{$exchange}}/ltc/BTC">LTC/BTC</a></li>
+                                    <li><a href="/{{$exchange}}/iot/usd">IOTA/USD</a></li>
+                                    <li><a href="/{{$exchange}}/iot/eth">IOTA/ETH</a></li>
+                                    <li><a href="/{{$exchange}}/iot/btc">IOTA/BTC</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <ul>
+                                    <li><a href="/{{$exchange}}/etc/usd">ETC/USD</a></li>
+                                    <li><a href="/{{$exchange}}/etc/btc">ETC/BTC</a></li>
+                                    <li><a href="/{{$exchange}}/xrp/usd">XRP/USD</a>
+                                    <li><a href="/{{$exchange}}/xrp/btc">XRP/BTC</a>
+                                    <li><a href="/{{$exchange}}/eos/usd">EOS/USD</a>
+                                    <li><a href="/{{$exchange}}/eos/eth">EOS ETH</a>
+                                    <li><a href="/{{$exchange}}/eos/btc">EOS/BTC</a></li>
+                                    <li><a href="/{{$exchange}}/san/usd">SAN/USD</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <ul>
+                                    <li><a href="/{{$exchange}}/san/eth">SAN/ETH</a></li>
+                                    <li><a href="/{{$exchange}}/san/btc">SAN/BTC</a></li>
+                                    <li><a href="/{{$exchange}}/omg/usd">OMG/USD</a></li>
+                                    <li><a href="/{{$exchange}}/omg/usd">OMG/USD</a></li>
+                                    <li><a href="/{{$exchange}}/omg/eth">OMG/ETH</a></li>
+                                    <li><a href="/{{$exchange}}/omg/btc">OMG/BTC</a></li>
+                                    <li><a href="/{{$exchange}}/snt/usd">SNT/USD</a></li>
+                                    <li><a href="/{{$exchange}}/snt/eth">SNT/ETH</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <ul>
+                                    <li><a href="/{{$exchange}}/snt/btc">SNT/BTC</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    {{--<li class="has-submenu">
+                        <a href="#"><i class="zmdi zmdi-collection-item"></i><span> Select Exchange </span> </a>
+                        <ul class="submenu">
+                            <li><a href="/bitfinex/{{$coin}}/{{$base}}">Bitfinex</a></li>
+                            <li><a href="/bittrex/{{$coin}}/{{$base}}">Bittrex</a></li>
+                        </ul>
+                    </li>--}}
+
+                </ul>
+                <!-- End navigation menu  -->
+            </div>
         </div>
     </div>
 </header>
@@ -167,162 +219,6 @@
             </div><!-- end col -->
         </div>
         <!-- end row -->
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/btc/usd" class="btn-lg btn-primary">BTC/USD</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/eth/usd" class="btn-lg btn-primary">ETH/USD</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/eth/btc" class="btn-lg btn-primary">ETH/BTC</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/ltc/usd" class="btn-lg btn-primary">LTC/USD</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/ltc/btc" class="btn-lg btn-primary">LTC/BTC</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/iot/usd" class="btn-lg btn-primary">IOTA/USD</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/iot/eth" class="btn-lg btn-primary">IOTA/ETH</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/iot/btc" class="btn-lg btn-primary">IOTA/BTC</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/etc/usd" class="btn-lg btn-primary">ETC/USD</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/eth/btc" class="btn-lg btn-primary">ETC/BTC</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/rrt/usd" class="btn-lg btn-primary">RRT/USD</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/rrt/btc" class="btn-lg btn-primary">RRT/BTC</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/xrp/usd" class="btn-lg btn-primary">XRP/USD</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/xrp/btc" class="btn-lg btn-primary">XRP/BTC</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/eos/usd" class="btn-lg btn-primary">EOS/USD</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/eos/eth" class="btn-lg btn-primary">EOS/ETH</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/eos/btc" class="btn-lg btn-primary">EOS/BTC</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/san/usd" class="btn-lg btn-primary">SAN/USD</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/san/eth" class="btn-lg btn-primary">SAN/ETH</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/san/btc" class="btn-lg btn-primary">SAN/BTC</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/omg/usd" class="btn-lg btn-primary">OMG/USD</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/omg/eth" class="btn-lg btn-primary">OMG/ETH</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/omg/btc" class="btn-lg btn-primary">OMG/BTC</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/snt/usd" class="btn-lg btn-primary">SNT/USD</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/snt/eth" class="btn-lg btn-primary">SNT/ETH</a>
-            </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <div class="card-box">
-                <a href="/{{$exchange}}/snt/btc" class="btn-lg btn-primary">SNT/BTC</a>
-            </div>
-        </div>
 
         <!-- Footer -->
         <footer class="footer text-right">
