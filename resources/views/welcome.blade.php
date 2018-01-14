@@ -88,7 +88,7 @@
                                     <li><a href="/{{$exchange}}/eth/usd">ETH/USD</a></li>
                                     <li><a href="/{{$exchange}}/eth/btc">ETH/BTC</a></li>
                                     <li><a href="/{{$exchange}}/ltc/usd">LTC/USD</a></li>
-                                    <li><a href="/{{$exchange}}/ltc/BTC">LTC/BTC</a></li>
+                                    <li><a href="/{{$exchange}}/ltc/btc">LTC/BTC</a></li>
                                     <li><a href="/{{$exchange}}/iot/usd">IOTA/USD</a></li>
                                     <li><a href="/{{$exchange}}/iot/eth">IOTA/ETH</a></li>
                                     <li><a href="/{{$exchange}}/iot/btc">IOTA/BTC</a></li>
