@@ -52,7 +52,7 @@
 
             <!-- LOGO -->
             <div class="topbar-left">
-                <a href="index.html" class="logo"><span>Admin<span>to</span></span></a>
+                <a href="index.html" class="logo"><span>Crap<span>tu</span></span></a>
             </div>
             <!-- End Logo container-->
 
@@ -225,7 +225,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-6">
-                        2016 - 2017 © Adminto.
+                        2016 - 2017 © Craptu.
                     </div>
                     <div class="col-xs-6">
                         <ul class="pull-right list-inline m-b-0">
