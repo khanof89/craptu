@@ -33,7 +33,7 @@
                     case 'GBP':
                         $symbol = 'gbp';
                         break;
-                    case 'CAD':
+                    case 'cad':
                         $symbol = 'dollar';
                         break;
                     case 'eur':
