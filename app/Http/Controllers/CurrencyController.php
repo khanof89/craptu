@@ -4,6 +4,7 @@
 
     use App\Models\Conversation;
     use App\Group;
+    use App\Models\Currency;
     use App\Models\Ticker;
     use App\Repositories\BitfinexRepository;
     use App\User;
@@ -33,18 +34,19 @@
          */
         public function getCoinPrice($exchange, $coin, $base, Request $request)
         {
+            $symbol = $base;
             if ($exchange) {
                 if (!$this->validExchanges($exchange)) {
                     $exchange = 'Bittrex';
                 }
             } else {
-                $exchange = 'Bittrex';
+                $exchange = 'Bitfinex';
             }
 
             $repository = "App\\Repositories\\" . ucfirst($exchange) . 'Repository';
             $dataSource = new $repository;
             $data       = ['symbol' => 'dollar', 'last_price' => '0'];
-            $data       = $dataSource->getData($coin, $base);
+            $data       = $dataSource->getData($coin, $base, $symbol);
 
             if ($request->ajax()) {
                 return json_encode($data);
@@ -104,9 +106,21 @@
                     break;
             }
 
+            if (in_array($base, ['eur', 'gbp', 'cad', 'pln', 'inr', 'jpy', 'chf', 'aud', 'sek', 'hkd', 'sgd'])) {
+                $price = Currency::where('currency', "usd$base")->first();
+                $price = $price->rate;
+                $base  = 'usd';
+            }
+
+            \Log::info($price);
             $stats   = Ticker::where(['exchange' => $exchange, 'coin' => $coin, 'base' => $base])->whereBetween('created_at', [$startDate, $endDate])->get();
             $results = [];
             foreach ($stats as $stat) {
+                if(isset($price))
+                {
+                    $stat->price = $stat->price * $price;
+                }
+
                 $results[] = ['y' => date('Y-m-d H:i:s', strtotime($stat->created_at)), 'a' => $stat->price];
             }
 

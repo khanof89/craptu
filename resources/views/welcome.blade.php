@@ -137,6 +137,24 @@
                         </ul>
                     </li>
 
+                    <li class="has-submenu">
+                        <a href="#"><i class="zmdi zmdi-money"></i><span> Select Currency </span> </a>
+                        <ul class="submenu">
+                            <li><a href="/bitfinex/{{$coin}}/usd">US Dollar</a></li>
+                            <li><a href="/bitfinex/{{$coin}}/eur">Euro</a></li>
+                            <li><a href="/bitfinex/{{$coin}}/gbp">Britain Pound</a></li>
+                            <li><a href="/bitfinex/{{$coin}}/cad">Canadian Dollar</a></li>
+                            <li><a href="/bitfinex/{{$coin}}/pln">Polish Zloty</a></li>
+                            <li><a href="/bitfinex/{{$coin}}/inr">Indian Rupee</a></li>
+                            <li><a href="/bitfinex/{{$coin}}/jpy">Japanese Yen</a></li>
+                            <li><a href="/bitfinex/{{$coin}}/chf">Swiss Franc</a></li>
+                            <li><a href="/bitfinex/{{$coin}}/aud">Australian Dollar</a></li>
+                            <li><a href="/bitfinex/{{$coin}}/sek">Swedish Krona</a></li>
+                            <li><a href="/bitfinex/{{$coin}}/hkd">Hong Kong Dollar</a></li>
+                            <li><a href="/bitfinex/{{$coin}}/sgd">Singapore Dollar</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
                 <!-- End navigation menu  -->
             </div>
@@ -153,8 +171,9 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="card-box text-center">
                         <h3 class="m-t-0 m-b-30">1 {{strtoupper($coin)}}=</h3>
-                        <h1 class="header-title-single m-t-0 m-b-30 price"><i
-                                    class="fa fa-{{$data['symbol']}}"></i> {{$data['price']}} </h1>
+                        <h1 class="header-title-single m-t-0 m-b-30 price">
+                            @if(ctype_upper($data['symbol'])) {{$data['symbol']}} @else <i
+                                    class="fa fa-{{$data['symbol']}}"></i>@endif {{$data['price']}} </h1>
                     </div>
                 </div><!-- end col -->
 
