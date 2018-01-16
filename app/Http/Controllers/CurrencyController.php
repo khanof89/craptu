@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers;
 
+    use App\Models\Coin;
     use App\Models\Conversation;
     use App\Group;
     use App\Models\Currency;
@@ -43,6 +44,9 @@
                 $exchange = 'Bitfinex';
             }
 
+            $supply = Coin::where('symbol', $coin)->first();
+            $supply = $supply->supply;
+
             $repository = "App\\Repositories\\" . ucfirst($exchange) . 'Repository';
             $dataSource = new $repository;
             $data       = ['symbol' => 'dollar', 'last_price' => '0'];
@@ -60,7 +64,7 @@
                 $user  = auth()->user();
             }
 
-            return view('welcome', compact('data', 'exchange', 'coin', 'base', 'groups', 'users', 'user', 'conversations'));
+            return view('welcome', compact('data', 'exchange', 'coin', 'base', 'groups', 'users', 'user', 'conversations', 'supply'));
 
         }
 
@@ -87,6 +91,8 @@
 
         public function graph($exchange, $coin, $base, $period = '')
         {
+            $supply = $this->getSupply();
+
             switch ($period) {
                 case 'week':
                     $startDate = Carbon::now()->subWeek(1);
@@ -112,11 +118,11 @@
                 $base  = 'usd';
             }
 
-            $stats   = Ticker::where(['exchange' => $exchange, 'coin' => $coin, 'base' => $base])->whereBetween('created_at', [$startDate, $endDate])->get();
+            $stats = Ticker::where(['exchange' => $exchange, 'coin' => $coin, 'base' => $base])->whereBetween('created_at', [$startDate, $endDate])->get();
+
             $results = [];
             foreach ($stats as $stat) {
-                if(isset($price))
-                {
+                if (isset($price)) {
                     $stat->price = $stat->price * $price;
                 }
 

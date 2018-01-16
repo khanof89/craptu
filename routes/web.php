@@ -15,6 +15,8 @@
         return redirect()->to('/bitfinex/btc/usd');
     });
 
+    Route::get('supply/{coin}', 'CurrencyController@getSupply');
+
     Auth::routes();
 
     Route::get('/home', 'HomeController@index')->name('home');

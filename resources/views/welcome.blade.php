@@ -43,7 +43,7 @@
 
     <script src="/assets/js/modernizr.min.js"></script>
 </head>
-<body>
+<body style="font-family: 'Roboto', sans-serif;">
 
 <!-- Navigation Bar-->
 <header id="topnav">
@@ -177,32 +177,42 @@
                     </div>
                 </div><!-- end col -->
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="card-box text-center">
                         <h4 class="header-title m-t-0 m-b-30">24 hour high</h4>
                         <div class="widget-chart-1">
-                            <h2 class="p-t-10 m-b-0"> {{$data['high']}} </h2>
+                            <h4 class="p-t-10 m-b-0"> {{$data['high']}} </h4>
                         </div>
                     </div>
                 </div><!-- end col -->
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="card-box text-center">
                         <h4 class="header-title m-t-0 m-b-30">24 hour low</h4>
                         <div class="widget-chart-1">
-                            <h2 class="p-t-10 m-b-0"> {{$data['low']}} </h2>
+                            <h4 class="p-t-10 m-b-0"> {{$data['low']}} </h4>
                         </div>
                     </div>
                 </div><!-- end col -->
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="card-box text-center">
                         <h4 class="header-title m-t-0 m-b-30">Volume</h4>
                         <div class="widget-chart-1">
-                            <h2 class="p-t-10 m-b-0"> {{$data['volume']}} </h2>
+                            <h4 class="p-t-10 m-b-0"> {{$data['volume']}} </h4>
                         </div>
                     </div>
                 </div><!-- end col -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-box text-center">
+                        <h4 class="header-title m-t-0 m-b-30">Supply</h4>
+                        <div class="widget-chart-1">
+                            <h4 class="p-t-10 m-b-0"> {{$supply}} </h4>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+
             </div>
             @if(\Auth::check())
                 <div class="col-md-3">
