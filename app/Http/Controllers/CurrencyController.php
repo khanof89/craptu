@@ -112,7 +112,6 @@
                 $base  = 'usd';
             }
 
-            \Log::info($price);
             $stats   = Ticker::where(['exchange' => $exchange, 'coin' => $coin, 'base' => $base])->whereBetween('created_at', [$startDate, $endDate])->get();
             $results = [];
             foreach ($stats as $stat) {
