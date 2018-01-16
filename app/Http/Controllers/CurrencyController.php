@@ -91,8 +91,6 @@
 
         public function graph($exchange, $coin, $base, $period = '')
         {
-            $supply = $this->getSupply();
-
             switch ($period) {
                 case 'week':
                     $startDate = Carbon::now()->subWeek(1);
